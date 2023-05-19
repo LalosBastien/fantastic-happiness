@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: privatebin
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: in-cluster
+        env: source
+        app: privatebin
+        namespace: privatebin
+  template:
+    metadata:
+      name: '{{env}}-{{app}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/LalosBastien/fantastic-happiness.git
+        targetRevision: main
+        path: '{{app}}/chart'
+      destination:
+        server: '{{cluster}}'
+        namespace: '{{namespace}}'

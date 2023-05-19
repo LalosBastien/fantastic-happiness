@@ -1,0 +1,11 @@
+---
+apiVersion: v2
+appVersion: 1.5.1
+description: A Helm umbrella chart for PrivateBin
+name: privatebin
+home: https://privatebin.info/
+icon: https://raw.githubusercontent.com/PrivateBin/assets/master/images/preview/icon.png
+type: application
+version: 0.18.0
+dependencies:
+  - name: 
