@@ -27,6 +27,6 @@ spec:
       destination:
         name: '{{cluster}}'
         namespace: '{{namespace}}'
-      syncPolicy:
-        automated:
-          prune: true
+      # syncPolicy:
+      #   automated:
+      #     prune: true

@@ -1,0 +1,8 @@
+---
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: ApplicationRestoreRequest
+metadata:
+  name: restore-privatebin-snapshot-0
+  namespace: privatebin
+spec:
+  applicationSnapshotName: snapshot-0
