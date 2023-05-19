@@ -2,13 +2,13 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: '{{ include "ndk-pairing.fullname" . }}-cluster-role-binding'
+  name: '{{ include "ndk-pairing.fullname" . }}-replication-cluster-role-binding'
 subjects:
   - kind: ServiceAccount
-    name: '{{ include "ndk-pairing.fullname" . }}-sa'
+    name: '{{ include "ndk-pairing.fullname" . }}-replication-sa'
     apiGroup: ""
     namespace: '{{ .Release.Namespace }}'
 roleRef:
   kind: ClusterRole
-  name: '{{ include "ndk-pairing.fullname" . }}-cluster-role'
+  name: '{{ include "ndk-pairing.fullname" . }}-replication-cluster-role'
   apiGroup: rbac.authorization.k8s.io

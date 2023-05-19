@@ -2,13 +2,13 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: '{{ include "ndk-pairing.fullname" . }}-role-binding'
+  name: '{{ include "ndk-pairing.fullname" . }}-replication-role-binding'
 subjects:
   - kind: ServiceAccount
-    name: '{{ include "ndk-pairing.fullname" . }}-sa'
+    name: '{{ include "ndk-pairing.fullname" . }}-replication-sa'
     apiGroup: ""
     namespace: '{{ .Release.Namespace }}'
 roleRef:
   kind: Role
-  name: '{{ include "ndk-pairing.fullname" . }}-role'
+  name: '{{ include "ndk-pairing.fullname" . }}-replication-role'
   apiGroup: ""
