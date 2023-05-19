@@ -2,7 +2,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-name: '{{ include "ndk-pairing.fullname" . }}-cluster-role-binding'
+  name: '{{ include "ndk-pairing.fullname" . }}-cluster-role-binding'
 subjects:
   - kind: ServiceAccount
     name: '{{ include "ndk-pairing.fullname" . }}-sa'
