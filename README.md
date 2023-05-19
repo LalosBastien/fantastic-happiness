@@ -11,6 +11,20 @@ k create namespace argocd
 k apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
 ```
 
+Update argocd-cm ConfigMap to exclude CiliumIdentity CR to avoid out-of-sync issues :
+```yaml
+# add this in argocd-cm
+data:
+  resource.exclusions: |
+    - apiGroups:
+      - cilium.io
+      kinds:
+      - CiliumIdentity
+      clusters:
+      - "*"
+```
+
+
 Install ArgoCD CLI tool :
 ```bash
 brew install argocd

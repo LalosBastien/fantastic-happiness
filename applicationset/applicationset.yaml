@@ -11,6 +11,10 @@ spec:
         env: source
         app: namespaces
         namespace: namespaces
+      - cluster: target
+        env: source
+        app: namespaces
+        namespace: namespaces
       - cluster: in-cluster
         env: source
         app: privatebin
@@ -27,11 +31,6 @@ spec:
       destination:
         name: '{{cluster}}'
         namespace: '{{namespace}}'
-      ignoreDifferences:
-        - group: '*'
-          kind: '*'
-          managedFieldsManagers:
-          - cilium-agent
       # syncPolicy:
       #   automated:
       #     prune: true
