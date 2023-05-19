@@ -8,4 +8,6 @@ icon: https://raw.githubusercontent.com/PrivateBin/assets/master/images/preview/
 type: application
 version: 0.18.0
 dependencies:
-  - name: 
+  - name: privatebin
+    version: "0.18.0"
+    repository: "https://privatebin.github.io/helm-chart/"
