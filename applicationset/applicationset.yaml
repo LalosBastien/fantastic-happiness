@@ -28,8 +28,10 @@ spec:
         name: '{{cluster}}'
         namespace: '{{namespace}}'
       ignoreDifferences:
-        - group: cilium.io
-          kind: CiliumIdentity
+        - group: '*'
+          kind: '*'
+          managedFieldsManagers:
+          - cilium-agent
       # syncPolicy:
       #   automated:
       #     prune: true
