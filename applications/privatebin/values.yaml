@@ -54,21 +54,25 @@ privatebin:
       # storageClass: "-"
     # For deployment controller, an emptyDir can be enable in the pod for writing data
     # with the following option
-    emptyDir: true
+    emptyDir: false
   securityContext:
     runAsUser: 65534
     runAsGroup: 82
     fsGroup: 82
     readOnlyRootFilesystem: true
 
-  extraVolumes: []
+  extraVolumes:
+    - name: privatebin-data
+      persistentVolumeClaim: 
+        claimName: privatebin-pvc
     # Optionally specify extra list of additional volumes for PrivateBin pod.
     # Example
     # - name: nginx-params
     #   configMap:
     #     name: nginx-params
 
-  extraVolumeMounts: []
+  extraVolumeMounts:
+    - mountPath: /srv/data
     # Optionally specify extra list of additional volumeMounts for PrivateBin pod.
     # Example
     # - mountPath: /etc/nginx/server.d
