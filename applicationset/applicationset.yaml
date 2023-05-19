@@ -12,7 +12,7 @@ spec:
         app: namespaces
         namespace: namespaces
       - cluster: target
-        env: source
+        env: target
         app: namespaces
         namespace: namespaces
       - cluster: in-cluster
