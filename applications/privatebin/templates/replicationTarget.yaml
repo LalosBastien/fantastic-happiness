@@ -1,0 +1,9 @@
+---
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: ReplicationTarget
+metadata:
+  name: target-k8s-cluster
+spec:
+  targetClusterSecretRef:
+    name: target-kubeconfig-secret
+    key: KUBECONFIG
