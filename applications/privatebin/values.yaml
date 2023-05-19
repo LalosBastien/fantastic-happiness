@@ -73,6 +73,7 @@ privatebin:
 
   extraVolumeMounts:
     - mountPath: /srv/data
+      name: privatebin-data
     # Optionally specify extra list of additional volumeMounts for PrivateBin pod.
     # Example
     # - mountPath: /etc/nginx/server.d
