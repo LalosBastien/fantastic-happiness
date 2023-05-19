@@ -20,5 +20,5 @@ spec:
         targetRevision: main
         path: '{{app}}/chart'
       destination:
-        server: '{{cluster}}'
+        name: '{{cluster}}'
         namespace: '{{namespace}}'
