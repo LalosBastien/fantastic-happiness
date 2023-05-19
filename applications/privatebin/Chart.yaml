@@ -11,3 +11,6 @@ dependencies:
   - name: privatebin
     version: "0.18.0"
     repository: "https://privatebin.github.io/helm-chart/"
+  - name: ndk
+    version: "0.1.0"
+    repository: "file://../ndk"

@@ -1,0 +1,16 @@
+---
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: ProtectionPlan
+metadata:
+  name: '{{ include "ndk.fullname" . }}-pplan'
+spec:
+  snapshotPolicies:
+    # Take a snapshot every 5 min and keep 1 hour of snapshots
+    - retentionPolicy:
+        retain: 12
+      schedulePolicyName: '{{ include "ndk.fullname" . }}-schedulepolicy-interval-5min'
+    # Take a snapshot every day and keep 1 week of snapshots
+    - retentionPolicy:
+        retain: 7
+      schedulePolicyName: '{{ include "ndk.fullname" . }}-schedulepolicy-daily'
+  suspend: false

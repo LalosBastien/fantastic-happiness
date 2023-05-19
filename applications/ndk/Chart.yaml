@@ -1,0 +1,7 @@
+---
+apiVersion: v2
+appVersion: 1.5.1
+description: A simple Helm Chart to manage backup using NDK
+name: ndk
+type: application
+version: 0.1.0

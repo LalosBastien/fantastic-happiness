@@ -2,6 +2,6 @@
 apiVersion: dataservices.nutanix.com/v1alpha1
 kind: Application
 metadata:
-    name: privatebin 
+    name: '{{ include "ndk.fullname" . }}-application'
 spec:
     applicationSelector:

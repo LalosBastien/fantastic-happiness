@@ -1,0 +1,24 @@
+---
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: SchedulePolicy
+metadata:
+  name: '{{ include "ndk.fullname" . }}-schedulepolicy-interval-1hour'
+spec:
+  interval:
+      minutes: 60
+---
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: SchedulePolicy
+metadata:
+  name: '{{ include "ndk.fullname" . }}-schedulepolicy-interval-5min'
+spec:
+  interval:
+      minutes: 5
+---
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: SchedulePolicy
+metadata:
+  name: '{{ include "ndk.fullname" . }}-schedulepolicy-daily'
+spec:
+  daily:
+    time: "08:10"

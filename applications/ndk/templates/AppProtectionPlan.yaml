@@ -1,0 +1,10 @@
+---
+apiVersion: dataservices.nutanix.com/v1alpha1
+kind: AppProtectionPlan
+metadata:
+  name: '{{ include "ndk.fullname" . }}-app-plan'
+spec:
+  suspend: false
+  applicationNames:
+    - '{{ include "ndk.fullname" . }}-application'
+  protectionPlanName: '{{ include "ndk.fullname" . }}-pplan'
