@@ -1,0 +1,15 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+name: '{{ include "ndk-pairing.fullname" . }}-replication-cluster-role'
+rules:
+  - apiGroups: ["dataservices.nutanix.com"]
+    resources: ["applicationsnapshotcontents", "applicationsnapshotcontents/status"]
+    verbs: ["create", "update", "get"]
+  - apiGroups: ["dataservices.nutanix.com"]
+    resources: ["storageclusters"]
+    verbs: ["get", "watch", "list"]
+  - apiGroups: [""]
+    resources: ["secrets"]
+    verbs: ["create", "get", "update"]

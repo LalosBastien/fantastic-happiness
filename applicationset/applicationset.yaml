@@ -7,17 +7,23 @@ spec:
   generators:
   - list:
       elements:
+      # Source cluster
       - cluster: in-cluster
         env: source
-        app: namespaces
-        namespace: namespaces
-      - cluster: target
-        env: target
         app: namespaces
         namespace: namespaces
       - cluster: in-cluster
         env: source
         app: privatebin
+        namespace: privatebin
+      # Target cluster
+      - cluster: target
+        env: target
+        app: namespaces
+        namespace: namespaces
+      - cluster: target
+        env: privatebin
+        app: ndk-pairing
         namespace: privatebin
   template:
     metadata:
