@@ -13,4 +13,4 @@ spec:
     - retentionPolicy:
         retain: 7
       schedulePolicyName: '{{ include "ndk.fullname" . }}-schedulepolicy-daily'
-  suspend: false
+  # suspend: false
