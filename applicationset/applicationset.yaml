@@ -22,7 +22,7 @@ spec:
         app: namespaces
         namespace: namespaces
       - cluster: target
-        env: privatebin
+        env: target-privatebin
         app: ndk-pairing
         namespace: privatebin
   template:
