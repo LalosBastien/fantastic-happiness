@@ -1,11 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: privatebin
+  name: app-generator
+  namespace: argocd
 spec:
   generators:
   - list:
       elements:
+      - cluster: in-cluster
+        env: source
+        app: namespaces
+        namespace: namespaces
       - cluster: in-cluster
         env: source
         app: privatebin
@@ -18,7 +23,7 @@ spec:
       source:
         repoURL: https://github.com/LalosBastien/fantastic-happiness.git
         targetRevision: main
-        path: '{{app}}/chart'
+        path: 'applications/{{app}}'
       destination:
         name: '{{cluster}}'
         namespace: '{{namespace}}'
