@@ -78,4 +78,7 @@ spec:
     key: KUBECONFIG
 ```
 
+# Remark
+- No cluster-wide custom ressource (not DRY)
+- 
 

@@ -17,5 +17,5 @@ spec:
     - replicationTargetName: target-k8s-cluster
       schedulePolicyName: '{{ include "ndk.fullname" . }}-schedulepolicy-interval-5min'
       retentionPolicy:
-        retain: 24
+        retain: 12
   # suspend: false
