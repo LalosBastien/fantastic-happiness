@@ -16,6 +16,10 @@ spec:
         env: source
         app: privatebin
         namespace: privatebin
+      - cluster: in-cluster
+        env: source
+        app: vault
+        namespace: vault
       # Target cluster
       - cluster: target
         env: target
@@ -25,6 +29,10 @@ spec:
         env: target-privatebin
         app: ndk-pairing
         namespace: privatebin
+      - cluster: target
+        env: target-vault
+        app: ndk-pairing
+        namespace: vault
   template:
     metadata:
       name: '{{env}}-{{app}}'

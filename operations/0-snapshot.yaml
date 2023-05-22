@@ -2,10 +2,10 @@
 apiVersion: dataservices.nutanix.com/v1alpha1
 kind: ApplicationSnapshot
 metadata:
-  name: snapshot-0
-  namespace: privatebin
+  name: <snapshot name>
+  namespace: <namespace>
 spec:
   source:
     applicationRef:
-      name: privatebin
-      namespace: privatebin
+      name: <application name>
+      namespace: <namespace>
